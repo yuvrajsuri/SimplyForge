@@ -1,30 +1,23 @@
 package com.yuvraj.SimplyForge.Entity;
 
+import java.time.Instant;
+
+import jakarta.persistence.Entity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-
-import java.time.Instant;
-
-import jakarta.persistence.Entity;
-
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class User {
+public class ChatSession {
+    Project project;
+    User user;
+    String title;
 
-    Long id;
-
-    String email;
-    String passwordHash;
-    String name;
-
-    String avatarUrl;
     Instant createdAt;
     Instant updatedAt;
 
-    Instant deletedAt; //soft delete
+    Instant deletedAt;
 }
-
