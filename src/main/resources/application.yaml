@@ -3,15 +3,18 @@ spring:
     name: SimplyForge
 
   datasource:
-    url:jdbc:postgresql://localhost:5432/testDB
-    username:yuvraj
-    password:12345678
+    url: jdbc:postgresql://localhost:5432/testDB
+    username: yuvraj
+    password: 12345678
 
   jpa:
     hibernate:
-      ddl-auto:update
-    show-sql:true
+      ddl-auto: update
+    show-sql: true
     properties:
-      hibernate;
-        dialect: org.hibernate.dialect.PostgresSQLDialect
-        format_sql:true
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+jwt:
+  secret-key: f9a7c3d1b8e4a6f2c9d0e7b5a1c3f8e6d2b4a9c7e1f0d6b8a3c5e9f2a7d1c4b6

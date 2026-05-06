@@ -1,5 +1,6 @@
 package com.yuvraj.SimplyForge.Service.Impl;
 
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Service;
 
 import com.yuvraj.SimplyForge.Service.AuthService;
@@ -12,6 +13,7 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public AuthResponse signup(SignupRequest request) {
+        // AuthenticationManager authenticationManager = 
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'signup'");
     }
