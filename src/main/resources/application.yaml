@@ -15,3 +15,7 @@ spring:
       hibernate;
         dialect: org.hibernate.dialect.PostgresSQLDialect
         format_sql:true
+        
+jwt:
+  secret: "your-super-secret-jwt-key-change-this-in-production"
+  expiration: 86400000 # 24 hours in milliseconds
