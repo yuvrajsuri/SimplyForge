@@ -12,22 +12,17 @@ import com.yuvraj.SimplyForge.dto.Auth.UserProfileResponse;
 @Service
 public class UserServiceImpl implements UserService{
 
+   UserRepository userRepository;
+
     @Override
     public UserProfileResponse getProfile(Long userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getProfile'");
+        return null;
     }
 
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
 
-        return new JwtUserPrincipal(
-                user.getId(),
-                user.getName(),
-                user.getUsername(),
-                user.getPassword(),
-                new ArrayList<>()
-        );    }
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUsername(username).orElseThrow(() -> new ResourceNotFoundException("User", username));
+    }
 
 }
