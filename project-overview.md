@@ -1,4 +1,4 @@
-Layer 1: The 30,000-Foot View
+"Layer 1: The 30,000-Foot View"
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║                        THE INTERNET                              ║
@@ -32,7 +32,7 @@ Layer 1: The 30,000-Foot View
            └──────────────────► intelligence-service (AI + chat)
 Mentor Note: The API Gateway is the bouncer at the club door. If your JWT is invalid or missing, you never get inside. Every other service trusts that anyone who reaches them has already been verified.
 
-Layer 2: The Infrastructure Backbone
+"Layer 2: The Infrastructure Backbone"
 These are not services your users interact with. They are the plumbing.
 
 
@@ -64,9 +64,9 @@ These are not services your users interact with. They are the plumbing.
 │   └─────────────────┘    │   self-hosted"   │    └─────────────────┘   │
 │                           └─────────────────┘                          │
 └────────────────────────────────────────────────────────────────────────┘
-Mentor Note: Think of Config Server like a .env file manager for all your services. Instead of each service having its own config, they all ask the Config Server: "Give me my settings." The Config Server fetches them from a private GitHub repo. This means if you need to change the DB password, you change it in ONE place in GitHub.
+Mentor Note: Think of Config Server like a .env file manager for all your services. Instead of each service having its own Config, they all ask the Config Server: "Give me my settings." The Config Server fetches them from a private GitHub repo. This means if you need to change the DB password, you change it in ONE place in GitHub.
 
-Layer 3: How Each Service Works Internally
+"Layer 3: How Each Service Works Internally"
 Every service follows the exact same internal pattern:
 
 
@@ -99,7 +99,7 @@ HTTP Request comes in
 ┌───────────────┐
 │  PostgreSQL   │  ← "I store the data permanently."
 └───────────────┘
-Layer 4: The 5 Core User Journeys
+"Layer 4: The 5 Core User Journeys"
 Journey 1: Signup / Login
 
 User                  API Gateway           account-service
@@ -396,7 +396,7 @@ User                  account-service              Stripe Servers
  │                         │◄── Webhook: invoice.paid ──│
  │                         │ → status: ACTIVE ✅        │
  │                         │ → set period dates         │
-Layer 5: The Common-Lib — Shared DNA
+"Layer 5: The Common-Lib — Shared DNA"
 Think of common-lib as a toolbox that gets packed into every service's bag:
 
 
@@ -437,7 +437,7 @@ Think of common-lib as a toolbox that gets packed into every service's bag:
          ▼               ▼               ▼
   account-svc      workspace-svc   intelligence-svc
   (all use it)     (all use it)    (all use it)
-Layer 6: The Security Model
+"Layer 6: The Security Model"
 How does a service know if you are allowed to do something?
 
 
