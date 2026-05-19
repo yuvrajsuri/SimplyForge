@@ -3,13 +3,16 @@ package com.yuvraj.SimplyForge.Service.Impl;
 import org.apache.coyote.BadRequestException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.yuvraj.SimplyForge.Entity.User;
 import com.yuvraj.SimplyForge.Service.AuthService;
 import com.yuvraj.SimplyForge.dto.Auth.AuthResponse;
 import com.yuvraj.SimplyForge.dto.Auth.LoginRequest;
 import com.yuvraj.SimplyForge.dto.Auth.SignupRequest;
+import com.yuvraj.SimplyForge.repository.UserRepository;
 import com.yuvraj.SimplyForge.security.AuthUtil;
 
 @Service
